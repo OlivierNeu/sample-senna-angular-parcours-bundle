@@ -1,0 +1,16 @@
+{
+	"liferayDir": "/java/workspace/dxp/liferay-workspace/bundles",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\/.*\\.ts$",
+				"use": "ts-loader"
+			}
+		],
+		"extensions": [
+			".ts",
+			".js"
+		],
+		"mainModule": "index.ts"
+	}
+}

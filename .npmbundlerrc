@@ -1,0 +1,42 @@
+{
+  "config": {
+    "imports": {
+      "sample-npm-angular-provider": {
+        "@angular/animations": "^6.1.0",
+        "@angular/common": "^6.1.0",
+        "@angular/compiler": "^6.1.0",
+        "@angular/core": "^6.1.0",
+        "@angular/forms": "^6.1.0",
+        "@angular/http": "^6.1.0",
+        "@angular/platform-browser": "^6.1.0",
+        "@angular/platform-browser-dynamic": "^6.1.0",
+        "@angular/router": "^6.1.0",
+        "@ngx-translate/core": "10.0.2",
+        "@ngx-translate/http-loader": "3.0.1",
+        "core-js": "^2.5.4",
+        "jquery": "^3.3.1",
+        "rxjs": "^6.3.3",
+        "zone.js": "~0.8.29"
+      },
+      "": {
+        "sample-npm-angular-provider": "^1.0.0"
+      }
+    }
+  },
+  "process-serially": true,
+  "create-jar": {
+    "output-dir": "dist",
+    "features": {
+      "js-extender": true,
+      "web-context": "/sample-senna-angular-parcours-bundle",
+      "localization": "features/localization/Language",
+      "settings": "features/settings.json"
+    }
+  },
+  "verbose": true,
+  "dump-report": true,
+  "exclude": {
+    "*": ["__tests__/**/*"]
+  },
+  "ignore": ["**/js/*.es.js"]
+}

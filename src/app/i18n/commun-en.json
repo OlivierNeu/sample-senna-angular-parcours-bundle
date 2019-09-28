@@ -1,0 +1,154 @@
+{
+  "navigateur-desuet": {
+    "titre": "This site is not compatible with your web browser.",
+    "description": "Some features of the site are not available or will not work correctly.",
+    "lien": "<a href='https://www.desjardinslifeinsurance.com/en/legal-notice/security/for-a-secure-website-experience' target='_blank'>See the procedure to update your browser.<span class='sr-only'> - External link. This link will open in a new window.</span><img src='./assets/commun/img/ic-lien-externe.svg' alt='' class='img-new-window' /></a>"
+  },
+  "message-erreur": {
+    "default": {
+      "required": "(en)Le champ est requis",
+      "minlength": "(en)Le champ est trop court",
+      "maxlength": "(en)Vous avez dépasser le nombre maximal de caractères",
+      "validateEmail": "(en)L'adresse courriel n'est pas valide",
+      "validatePhone": "(en)Le numéro de téléphone n'est pas valide",
+      "validateDateNaissance": "(en)La date saisie n'est pas valide",
+      "validatePassword": "(en)Le mot de passe ne correspont pas aux critères de sécurité",
+      "erreur": "(en)Le champ contient au moins une erreur"
+    }
+  },
+  "sommaire-validation": {
+    "erreurs-detectees": "Errors were detected in the following fields:"
+  },
+  "onglets": {
+    "aria-label": "Step {{noEtape}} of {{nbEtapes}} - {{titre}}",
+    "etape": "Step"
+  },
+  "fil_ariane": {
+    "sommaire": {
+      "libelle": "Your account",
+      "url": "/sommaire",
+      "precedent": null
+    }
+  },
+  "barre-progression": {
+    "etape" : "Step",
+    "de" : "of",
+    "etapes-precedentes" : "Previous steps",
+    "etapes-suivantes" : "Next steps",
+    "complete" : "completed",
+    "selectionnee" : "selected"
+  },
+  "sr-only-lien-externe": " - External link. This link will open in a new window.",
+  "boutonRetourAuSommaire": "Back to overview",
+  "lien-contournement": "Go to the main content",
+  "header": {
+    "accesd": {
+      "logoDesjardins-alt": "Back to Desjardins.com home page",
+      "logoDesjardins-lien": "//www.desjardins.com/changement-langue-province.jsp?langue=en&destination=%2Fca%2Findex.jsp",
+      "logoAccesd-alt": "AccèsD",
+      "nous-trouver": "Find us",
+      "nous-trouver-lien": "//www.desjardins.com/ca/locator/index.jsp",
+      "nous-joindre": "Contact us",
+      "nous-joindre-onclick": "https://www.desjardins.com/en/services_en_ligne/accesd/aide/ai_joindre.jsp?domaine=ACCESD",
+      "h1-hors-ecran": "Desjardins website",
+      "taille-texte": {
+        "augmenter": "Increase text size",
+        "reduire": "Decrease text size"
+      },
+      "se-deconnecter": "Log off",
+      "quitter": "Quit"
+    },
+    "zav": {
+      "logoDsf-alt": "Desjardins insurance, life, health, retirement (home page).",
+      "logoDsf-img": "./assets/commun/img/logo-dsf-en-US.svg",
+      "logoDsf-lien": "/sommaire",
+      "logoDsf-lienDAV": "https://www.desjardinslifeinsurance.com/en/",
+      "mon-profil": {
+        "titre": "Your profile",
+        "bienvenue": "Welcome",
+        "modifier-mdp": "Change your password",
+        "se-deconnecter": "Log off"
+      },
+      "tel-bouton-alt": "Need help?",
+      "tel-appelez-nous": "Call us",
+      "tel-nous-joindre": "1-866-838-7553",
+      "tel-nous-joindre-lien": "18668387553",
+      "horaire-nous-joindre": "(Monday to Friday, 8:00&nbsp;a.m. to 5:00&nbsp;p.m. ET)",
+      "tel-hors-ecran": "This link will launch your default phone software.",
+      "section-securisee": "SECURED SECTION"
+    }
+  },
+  "footer": {
+    "accesd": {
+      "sommaire-accesd": "ACCÈSD OVERVIEW",
+      "sommaire-accesd-lien": "",
+      "services-particuliers": "PERSONAL SERVICES",
+      "services-particuliers-lien": "//www.desjardins.com/ca/personal/index.jsp",
+      "services-entreprises": "BUSINESS SERVICES",
+      "services-entreprises-lien": "//www.desjardins.com/ca/business/index.jsp",
+      "coopmoi": "CO-OPME",
+      "coopmoi-lien": "//www.desjardins.com/ca/co-opme/index.jsp",
+      "a-propos": "ABOUT US",
+      "a-propos-lien": "//www.desjardins.com/ca/about-us/index.jsp",
+      "mobile": "MOBILE, GPS AND RSS",
+      "mobile-lien": "//www.desjardins.com/ca/mobile-gps-rss/index.jsp",
+      "plan-site": "Site map",
+      "zone-legale": {
+        "cooperer": "Cooperating in building the future",
+        "securite": "Security",
+        "securite-lien": "//www.desjardins.com/ca/security/",
+        "confidentialite": "Privacy",
+        "confidentialite-lien": "//www.desjardins.com/ca/privacy/",
+        "conditions-utilisation": "Terms of Use and legal notes",
+        "conditions-utilisation-lien": "//www.desjardins.com/ca/terms-use-legal-notes/",
+        "accessibilite": "Accessibility",
+        "accessibilite-lien": "//www.desjardins.com/accessibility/",
+        "plan-site": "Site map",
+        "plan-site-lien": "//www.desjardins.com/ca/site-map/"
+      },
+      "copyright": "© 1996-{{anneeCourante}}, Mouvement des caisses Desjardins - Desjardins Group. All rights reserved.",
+      "logo-securite-lien": "//www.desjardins.com/ca/security/refunds-fraud/index.jsp",
+      "logo-securite-src": "./assets/commun/img/logo-securite-blanc-e.svg",
+      "logo-securite-alt": "The Guaranteed 100% Secure program"
+    },
+    "zav": {
+      "service-clientele": "CUSTOMER SERVICE",
+      "message-service-clientele": "If you have questions about your account, your insurance coverage or your policies, call us at",
+      "soutien-technique": "TECHNICAL SUPPORT",
+      "message-soutien-technique": "If you're having problems logging in or displaying the site, call us at",
+      "tel-service-clientele": "1-866-838-7553",
+      "tel-service-clientele-lien": "18668387553",
+      "tel-soutien-technique": "1-877-838-7591",
+      "tel-soutien-technique-lien": "18778387591",
+      "tel-hors-ecran": "This link will launch your default phone software.",
+      "horaire-nous-joindre": "Monday to Friday, 8:00&nbsp;a.m. to 5:00&nbsp;p.m. ET",
+      "zone-legale": {
+        "securite": "Security",
+        "securite-lien": "https://www.desjardinslifeinsurance.com/en/legal-notice/security",
+        "confidentialite": "Privacy",
+        "confidentialite-lien": "https://www.desjardinslifeinsurance.com/en/legal-notice/privacy-policy",
+        "conditions-utilisation": "Terms of Use and legal notes",
+        "conditions-utilisation-lien": "https://www.desjardinslifeinsurance.com/en/legal-notice",
+        "plaintes": "Complaints",
+        "plaintes-lien": "https://www.desjardinslifeinsurance.com/en/about-Desjardins-Insurance/complaints",
+        "accessibilite": "Accessibility",
+        "accessibilite-lien": "https://www.desjardinslifeinsurance.com/en/about-Desjardins-Insurance/our-commitment-to-society/accessibility-for-persons-with-disabilities"
+      },
+      "copyright": {
+        "ligne-1": " © {{anneeCourante}} Desjardins Financial Security. All Rights Reserved.",
+        "ligne-2": "Desjardins Insurance refers to Desjardins Financial Security Life Assurance Company."
+      },
+      "logo-securite-src": "./assets/commun/img/logo-securite-blanc-e.svg",
+      "logo-securite-alt": "Guaranteed 100% Secure"
+    }
+  },
+  "prolongation-session-modale": {
+    "titre": "Your session will time out soon",
+    "delai-inactivite": "Your session will time out in",
+    "donnees-perdues": "second(s). Your data will be lost.",
+    "question-prolongation-session": "Would you like to continue?",
+    "bouton-oui": "Yes",
+    "bouton-non": "No",
+    "texte-alt-image-alerte": "Warning!"
+  }
+}

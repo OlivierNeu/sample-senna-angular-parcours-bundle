@@ -1,0 +1,15 @@
+{
+	"fields": {
+		"fruit": {
+			"type": "string",
+			"name": "fruit",
+			"description": "fruit-help",
+			"default": "orange",
+			"options": {
+				"orange": "an-orange",
+				"pear": "a-pear",
+				"apple": "an-apple"
+			}
+		}
+	}
+}

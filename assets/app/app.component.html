@@ -1,0 +1,25 @@
+<div class="etape-bulle" data-initplugin="n3EtapeBulle">
+    <div class="etape-bulle-pagination">
+        <button class="etape-bulle-button etape-bulle-button-previous js-previous hide" type="button">
+            <span class="sr-only">{{ 'barre-progression.etapes-precedentes' | translate }}</span>
+        </button>
+        <ul class="etape-bulle-list team-color-1" role="tablist">
+            <li *ngFor="let etape of etapes"
+                [ngClass]="{
+                      'etape-bulle-item': true,
+                      'visited': etape.visited,
+                      'active': etape.etapeCourante
+                     }">
+                <span class="etape-bulle-cercle">
+                    <span class="sr-only"></span>
+                    <span class="etape-bulle-nombre">{{ etape.numeroEtape }}</span>
+                    <span [ngClass]="{
+                      'sr-only': true,
+                      'etape-bulle-active': etape.etapeCourante
+                     }">{{ 'barre-progression.etape' | translate }} {{ etape.numeroEtape }} {{ 'barre-progression.de' | translate }} {{ etapes.length }} {{ (etape.numeroEtape < numeroEtapeCourante ? 'barre-progression.complete' : '') | translate }}{{ (etape.etapeCourante == true ? 'barre-progression.selectionnee' : '') | translate }}
+                        : {{ etape.nomEtape }}</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>

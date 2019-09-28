@@ -1,0 +1,155 @@
+{
+  "navigateur-desuet": {
+    "titre": "Votre navigateur Web ne peut afficher ce site correctement.",
+    "description": "Certaines fonctionnalités du site pourraient ne pas s’afficher correctement ou ne pas être disponibles.",
+    "lien": "<a href='https://www.desjardinsassurancevie.com/fr/avis-juridique/securite/naviguez-en-toute-securite' target='_blank'>Voir la marche à suivre pour mettre votre navigateur à jour.<span class='sr-only'> - Lien externe au site. S'ouvre dans une nouvelle fenêtre.</span><img src='./assets/commun/img/ic-lien-externe.svg' alt='' class='img-new-window' /></a>"
+  },
+  "message-erreur": {
+    "default": {
+      "required": "Le champ est requis",
+      "maxlength": "Le champ est trop long",
+      "minlength": "Le champ est trop court",
+      "validateEmail": "L'adresse courriel n'est pas valide",
+      "validatePhone": "Le numéro de téléphone n'est pas valide",
+      "validateDateNaissance": "La date saisie n'est pas valide",
+      "validatePassword": "Le mot de passe ne correspont pas aux critères de sécurité",
+      "erreur": "Le champ contient au moins une erreur"
+    }
+  },
+  "sommaire-validation": {
+    "erreurs-detectees": "Des erreurs ont été détectées dans les champs suivants :"
+  },
+  "onglets": {
+    "nb-etapes-a-complete": "Ce formulaire comporte {{nbEtapes}} étapes à compléter.",
+    "aria-label": "Étape {{noEtape}} de {{nbEtapes}} - {{titre}}",
+    "etape": "Étape"
+  },
+  "fil_ariane": {
+    "sommaire": {
+      "libelle": "Mon dossier client",
+      "url": "/sommaire",
+      "precedent": null
+    }
+  },
+  "barre-progression": {
+    "etape" : "Étape",
+    "de" : "de",
+    "etapes-precedentes" : "Étapes précédentes",
+    "etapes-suivantes" : "Étapes suivantes",
+    "complete" : "complétée",
+    "selectionnee" : "sélectionnée"
+  },
+  "sr-only-lien-externe": " - Lien externe au site. S'ouvre dans une nouvelle fenêtre.",
+  "boutonRetourAuSommaire": "Retour au sommaire",
+  "lien-contournement": "Aller au contenu principal",
+  "header": {
+    "accesd": {
+      "logoDesjardins-alt": "Retour à page d'accueil de Desjardins.com",
+      "logoDesjardins-lien": "//www.desjardins.com/changement-langue-province.jsp?langue=fr&destination=%2Findex.jsp",
+      "logoAccesd-alt": "AccèsD",
+      "nous-trouver": "Nous trouver",
+      "nous-trouver-lien": "//www.desjardins.com/localisateur/index.jsp",
+      "nous-joindre": "Nous joindre",
+      "nous-joindre-onclick": "https://www.desjardins.com/fr/services_en_ligne/accesd/aide/ai_joindre.jsp?domaine=ACCESD",
+      "h1-hors-ecran": "Site Internet de Desjardins",
+      "taille-texte": {
+        "augmenter": "Augmenter la taille du texte",
+        "reduire": "Réduire la taille du texte"
+      },
+      "se-deconnecter": "Se déconnecter",
+      "quitter": "Quitter"
+    },
+    "zav": {
+      "logoDsf-alt": "Desjardins assurances, Vie, santé, retraite (page d’accueil).",
+      "logoDsf-img": "./assets/commun/img/logo-dsf-fr-FR.svg",
+      "logoDsf-lien": "/sommaire",
+      "logoDsf-lienDAV": "https://www.desjardinsassurancevie.com/fr/",
+      "mon-profil": {
+        "titre": "Mon profil",
+        "bienvenue": "Bienvenue",
+        "modifier-mdp": "Modifier votre mot de passe",
+        "se-deconnecter": "Se déconnecter"
+      },
+      "tel-bouton-alt": "Besoin d’aide&nbsp;?",
+      "tel-appelez-nous": "Appelez-nous",
+      "tel-nous-joindre": "1&nbsp;866&nbsp;647-5013",
+      "tel-nous-joindre-lien": "18666475013",
+      "horaire-nous-joindre": "(du lundi au vendredi, entre 8&nbsp;h et 17&nbsp;h, heure de l'Est)",
+      "tel-hors-ecran": "Ce lien lancera votre logiciel de téléphonie par défaut.",
+      "section-securisee": "Section sécurisée"
+    }
+  },
+  "footer": {
+    "accesd": {
+      "sommaire-accesd": "SOMMAIRE ACCÈSD",
+      "sommaire-accesd-lien": "",
+      "services-particuliers": "SERVICES AUX PARTICULIERS",
+      "services-particuliers-lien": "//www.desjardins.com/particuliers/index.jsp",
+      "services-entreprises": "SERVICES AUX ENTREPRISES",
+      "services-entreprises-lien": "//www.desjardins.com/entreprises/index.jsp",
+      "coopmoi": "COOPMOI",
+      "coopmoi-lien": "//www.desjardins.com/coopmoi/index.jsp",
+      "a-propos": "À PROPOS",
+      "a-propos-lien": "//www.desjardins.com/a-propos/index.jsp",
+      "mobile": "DESJARDINS SUR MOBILE, GPS ET RSS",
+      "mobile-lien": "//www.desjardins.com/mobile-gps-rss/index.jsp",
+      "plan-site": "Plan du site",
+      "zone-legale": {
+        "cooperer": "Coopérer pour créer l'avenir",
+        "securite": "Sécurité",
+        "securite-lien": "//www.desjardins.com/securite/",
+        "confidentialite": "Confidentialité",
+        "confidentialite-lien": "//www.desjardins.com/confidentialite/",
+        "conditions-utilisation": "Conditions d'utilisation et notes légales",
+        "conditions-utilisation-lien": "//www.desjardins.com/conditions-utilisation-notes-legales/",
+        "accessibilite": "Accessibilité",
+        "accessibilite-lien": "//www.desjardins.com/accessibilite/",
+        "plan-site": "Plan du site",
+        "plan-site-lien": "//www.desjardins.com/plan-site/"
+      },
+      "copyright": "© 1996-{{anneeCourante}}, Mouvement des caisses Desjardins. Tous droits réservés.",
+      "logo-securite-lien": "//www.desjardins.com/securite/remboursement-fraude/index.jsp",
+      "logo-securite-src": "./assets/commun/img/logo-securite-blanc-f.svg",
+      "logo-securite-alt": "Programme Sécurité garantie à 100 %"
+    },
+    "zav": {
+      "service-clientele": "SERVICE À LA CLIENTÈLE",
+      "message-service-clientele": "Si vous avez des questions sur votre dossier client, vos assurances ou vos contrats, appelez au",
+      "soutien-technique": "SOUTIEN TECHNIQUE",
+      "message-soutien-technique": "Si vous avez des problèmes techniques de connexion ou d’affichage du site Web, appelez au",
+      "tel-service-clientele": "1&nbsp;866&nbsp;647-5013",
+      "tel-service-clientele-lien": "18666475013",
+      "tel-soutien-technique": "1&nbsp;877&nbsp;838-7591",
+      "tel-soutien-technique-lien": "18778387591",
+      "tel-hors-ecran": "Ce lien lancera votre logiciel de téléphonie par défaut.",
+      "horaire-nous-joindre": "du lundi au vendredi, entre 8&nbsp;h et 17&nbsp;h, heure de l'Est",
+      "zone-legale": {
+        "securite": "Sécurité",
+        "securite-lien": "https://www.desjardinsassurancevie.com/fr/avis-juridique/securite",
+        "confidentialite": "Confidentialité",
+        "confidentialite-lien": "https://www.desjardinsassurancevie.com/fr/avis-juridique/politique-de-confidentialite",
+        "conditions-utilisation": "Conditions d'utilisation et notes légales",
+        "conditions-utilisation-lien": "https://www.desjardinsassurancevie.com/fr/avis-juridique",
+        "plaintes": "Plaintes",
+        "plaintes-lien": "https://www.desjardinsassurancevie.com/fr/a-propos-Desjardins-Assurances/plaintes",
+        "accessibilite": "Accessibilité",
+        "accessibilite-lien": "https://www.desjardinsassurancevie.com/fr/a-propos-Desjardins-Assurances/notre-engagement-envers-la-societe/accessibilite-pour-les-personnes-handicapees"
+      },
+      "copyright": {
+        "ligne-1": " © {{anneeCourante}} Desjardins Sécurité financière. Tous droits réservés.",
+        "ligne-2": "Desjardins Assurances désigne Desjardins Sécurité financière, compagnie d'assurance vie."
+      },
+      "logo-securite-src": "./assets/commun/img/logo-securite-blanc-f.svg",
+      "logo-securite-alt": "Sécurité garantie à 100 %"
+    }
+  },
+  "prolongation-session-modale": {
+    "titre": "Votre session expirera bientôt",
+    "delai-inactivite": "Votre session expirera dans",
+    "donnees-perdues": "seconde(s). Les données saisies seront perdues.",
+    "question-prolongation-session": "Voulez-vous prolonger la session&nbsp;?",
+    "bouton-oui": "Oui",
+    "bouton-non": "Non",
+    "texte-alt-image-alerte": "Avertissement!"
+  }
+}
