@@ -31,8 +31,6 @@ pom.xml.releaseBackup
 **/.sass-cache
 
 # Liferay-Instant-Deploy
-**/package.json
-**/gulpfile.js
 /target/
 /bin/
 
