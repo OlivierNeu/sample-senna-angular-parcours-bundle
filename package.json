@@ -62,7 +62,7 @@
     "javax.portlet.name": "sample_senna_angular_parcours_bundle",
     "javax.portlet.security-role-ref": "power-user,user",
     "javax.portlet.resource-bundle": "content.Language",
-    "com.liferay.portlet.css-class-wrapper": "load-widget sample-senna-angular-parcours-bundle"
+    "com.liferay.portlet.css-class-wrapper": "load-widget sample-npm sample-senna-angular-parcours-bundle"
   },
   "main": "index.js"
 }
