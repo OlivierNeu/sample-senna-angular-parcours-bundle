@@ -9,17 +9,20 @@ declare const Liferay: any;
 @Injectable({
     providedIn: 'root',
 })
-export class EtapeService {
+export class ParcoursService {
+
+    private static etapes: Etape[];
 
     // Retourne une liste d'Etape récupéré via un appel distant. Fonction Asynchrone
     public getEtapes(): Observable<Etape[]> {
-        return of(this.setVisitedSteps(this.getSortedSteps(ETAPES)));
+        ParcoursService.etapes = ETAPES;
+        return of(this.setVisitedSteps(this.getSortedSteps(ParcoursService.etapes)));
     }
 
     // Modifi le parcours en fonction du sens de l'étape, mémorise la nouvelle etape courante et implique un changement visuel
     public navigateEtape(etapes: Etape[], sens: any): Etape {
 
-        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
+        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
         let newIndex = this.getNewIndexByCurrentStepAndDirectionAndOldindex(etapes, sens, currentIndex);
 
         this.setVisitedSteps(etapes);
@@ -35,7 +38,7 @@ export class EtapeService {
     // Navigue vers l'étape correspondant à l'URL passé en param
     public nagigateEtapeByUrl(etapes: Etape[], url: string): Etape[] {
 
-        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
+        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
         let newIndex = this.getIndexFromCurrentEtapeByUrl(etapes, url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
@@ -56,9 +59,9 @@ export class EtapeService {
 
         let newIndex = 0;
 
-        if (sens === EtapeService.NAVIGATION_PRECEDENT) {
+        if (sens === ParcoursService.NAVIGATION_PRECEDENT) {
             newIndex = oldIndex - 1;
-        } else if (sens === EtapeService.NAVIGATION_SUIVANT) {
+        } else if (sens === ParcoursService.NAVIGATION_SUIVANT) {
             newIndex = oldIndex + 1;
         } else {
             newIndex = oldIndex;
@@ -119,7 +122,7 @@ export class EtapeService {
 
     public setVisitedSteps(etapes: Etape[]): Etape[] {
 
-        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
+        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
 
         etapes.forEach(function (etape: Etape, index: number) {
 
@@ -129,21 +132,6 @@ export class EtapeService {
         });
 
         return etapes;
-    }
-
-    private wait(ms: number) {
-        var start = new Date().getTime();
-        var end = start;
-        while (end < start + ms) {
-            end = new Date().getTime();
-        }
-    }
-
-    private getStepsByRemoteService(): Etape[] {
-
-        this.wait(7000);
-
-        return ETAPES;
     }
 
     public static NAVIGATION = 'navigation';

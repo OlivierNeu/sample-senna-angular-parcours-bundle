@@ -3,8 +3,8 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {APP_BASE_HREF} from "@angular/common";
 
 import {AppComponent} from './app.component';
-import {EtapeService} from "./services/etape-service";
-import {MessageService} from './services/message-service';
+import {ParcoursService} from "./services/parcours.service";
+import {MessageService} from './services/message.service';
 
 @NgModule({
     imports: [
@@ -17,7 +17,7 @@ import {MessageService} from './services/message-service';
         AppComponent
     ],
     providers: [
-        EtapeService,
+        ParcoursService,
         MessageService,
         {provide: APP_BASE_HREF, useValue: '/'}
     ],

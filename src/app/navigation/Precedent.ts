@@ -1,12 +1,12 @@
-import {EtapeService} from '../services/etape-service'
+import {ParcoursService} from '../services/parcours.service'
 
 class NavigationPrecedent {
 
     constructor() {
         window.top.postMessage({
-            event_id: EtapeService.NAVIGATION,
+            event_id: ParcoursService.NAVIGATION,
             data: {
-                sens: EtapeService.NAVIGATION_PRECEDENT
+                sens: ParcoursService.NAVIGATION_PRECEDENT
             }
         }, '*');
     }

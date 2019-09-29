@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 
-import {EtapeService} from "./services/etape-service";
-import {MessageService} from './services/message-service';
+import {ParcoursService} from "./services/parcours.service";
+import {MessageService} from './services/message.service';
 
 import Etape from "../types/Etape";
 import LiferayParams from "../types/LiferayParams";
@@ -16,7 +16,7 @@ declare const Liferay: any;
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
-    constructor(private etapeService: EtapeService, private messageService: MessageService) {
+    constructor(private etapeService: ParcoursService, private messageService: MessageService) {
         window.addEventListener('message', this.receiveMessage.bind(this), false);
     }
 
@@ -27,6 +27,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
         // Fait correspondre le parcours en fonction de URL
         this.etapeService.nagigateEtapeByUrl(this.etapes, location.pathname);
+
+        this.getCurrentEtape();
     }
 
     ngAfterViewInit(): void {
@@ -38,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     public getCurrentEtape(): number {
-        return EtapeService.getIndexFromCurrentEtape(this.etapes);
+        return ParcoursService.getIndexFromCurrentEtape(this.etapes);
     }
 
     // Retour la liste des étapes qui permet de construire le parcours de l'utilisateur
@@ -55,7 +57,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     // Applique un éguillage dépendant du type d'évènement
     messageControler(data: any, etapes: Etape[]) {
 
-        if (data.event_id === EtapeService.NAVIGATION) {
+        if (data.event_id === ParcoursService.NAVIGATION) {
 
             let newEtape = this.etapeService.navigateEtape(etapes, data.data.sens);
             this.etapeService.loadSennaSurfacesByStep(newEtape);

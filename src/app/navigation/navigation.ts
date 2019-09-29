@@ -1,4 +1,4 @@
-import {EtapeService} from "../services/etape-service";
+import {ParcoursService} from "../services/parcours.service";
 
 let init = function (): any {
     return;
@@ -6,9 +6,9 @@ let init = function (): any {
 
 let precedent = function (): any {
     window.top.postMessage({
-        event_id: EtapeService.NAVIGATION,
+        event_id: ParcoursService.NAVIGATION,
         data: {
-            sens: EtapeService.NAVIGATION_PRECEDENT
+            sens: ParcoursService.NAVIGATION_PRECEDENT
         }
     }, '*');
 
@@ -19,9 +19,9 @@ let precedent = function (): any {
 
 let suivant = function (): any {
     window.top.postMessage({
-        event_id: EtapeService.NAVIGATION,
+        event_id: ParcoursService.NAVIGATION,
         data: {
-            sens: EtapeService.NAVIGATION_SUIVANT
+            sens: ParcoursService.NAVIGATION_SUIVANT
         }
     }, '*');
 
