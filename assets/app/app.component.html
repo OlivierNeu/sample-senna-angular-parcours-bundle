@@ -1,21 +1,18 @@
-<div class="etape-bulle" data-initplugin="n3EtapeBulle">
-    <div class="etape-bulle-pagination">
-        <ul class="etape-bulle-list team-color-1" role="tablist">
-            <li *ngFor="let etape of etapes"
-                [ngClass]="{
-                      'etape-bulle-item': true,
-                      'visited': etape.visited,
+<ol class="multi-step-nav multi-step-nav-collapse-sm multi-step-indicator-label-top">
+
+    <li *ngFor="let etape of etapes; let last = last;"
+        [ngClass]="{
+                      'complete multi-step-item': true,
+                      'multi-step-item-expand': !last,
+                      'disabled': !etape.visited,
                       'active': etape.etapeCourante
                      }">
-                <span class="etape-bulle-cercle">
-                    <span class="sr-only"></span>
-                    <span class="etape-bulle-nombre">{{ etape.numeroEtape }}</span>
-                    <span [ngClass]="{
-                      'sr-only': true,
-                      'etape-bulle-active': etape.etapeCourante
-                     }"></span>
-                </span>
-            </li>
-        </ul>
-    </div>
-</div>
+
+        <div class="multi-step-divider"></div>
+        <div class="multi-step-indicator">
+            <div class="multi-step-indicator-label">Step {{ etape.numeroEtape }}</div>
+            <a class="multi-step-icon" [attr.data-multi-step-icon]="etape.numeroEtape" href="#1"></a>
+        </div>
+
+    </li>
+</ol>
