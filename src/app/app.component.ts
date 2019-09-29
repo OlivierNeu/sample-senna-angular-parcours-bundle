@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnInit() {
 
         // Initialise le tableau d'étapes
-        this.getEtapes();
+        this.parcoursService.initEtapes();
 
         // Fait correspondre le parcours en fonction de URL courante. Obligatoire lors du chargement d'une étape directe
         this.parcoursService.nagigateEtapeByUrl(location.pathname);
@@ -37,18 +37,17 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // Retourne la liste des étapes qui permet de construire le parcours de l'utilisateur
-    getEtapes(): void {
-        this.parcoursService.initEtapes()
-            .subscribe(etapes => this.etapes = etapes);
+    getEtapes(): Etape[] {
+        return ParcoursService.getEtapes();
     }
 
     // Traite le message passé en param
     receiveMessage(event: any): any {
-        this.messageControler(event.data, this.etapes);
+        this.messageControler(event.data);
     };
 
     // Applique un éguillage dépendant du type d'évènement
-    messageControler(data: any, etapes: Etape[]) {
+    messageControler(data: any) {
 
         if (data.event_id === ParcoursService.NAVIGATION) {
 
@@ -56,6 +55,5 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         }
     };
 
-    @Input() etapes: Etape[];
     params: LiferayParams;
 }

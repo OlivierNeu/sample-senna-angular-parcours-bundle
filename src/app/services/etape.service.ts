@@ -15,7 +15,7 @@ export class EtapesService {
         this.etapes = etapes;
     }
 
-    public static getEtapes() {
+    public static getEtapes(): Etape[] {
         return this.etapes;
     }
 

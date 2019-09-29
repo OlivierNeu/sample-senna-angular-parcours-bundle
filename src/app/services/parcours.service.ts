@@ -14,6 +14,11 @@ export class ParcoursService {
     constructor(private sennaService: SennaService) {
     }
 
+    // Retourne la liste d'étapes
+    public static getEtapes():Etape[] {
+        return EtapesService.getEtapes();
+    }
+
     // Retourne une liste d'Etape récupéré via un appel distant. Fonction Asynchrone
     public initEtapes(): Observable<Etape[]> {
         EtapesService.setEtapes(ETAPES);
@@ -32,11 +37,6 @@ export class ParcoursService {
         return EtapesService.getEtapes()[newIndex];
     };
 
-    // Charge les surfaces Senna en fonction de l'étape passé en param
-    private loadSennaSurfacesByStep(etape: Etape): void {
-        this.sennaService.loadSurfaceByUrl(etape.url);
-    };
-
     // Navigue vers l'étape correspondant à l'URL passé en param
     public nagigateEtapeByUrl(url: string): Etape[] {
 
@@ -51,6 +51,11 @@ export class ParcoursService {
 
         return EtapesService.getEtapes();
     }
+
+    // Charge les surfaces Senna en fonction de l'étape passé en param
+    private loadSennaSurfacesByStep(etape: Etape): void {
+        this.sennaService.loadSurfaceByUrl(etape.url);
+    };
 
     // Retourne si possible l'index de l'étape donné par sont sens (prédédent ou suivant).
     private getNewIndexByCurrentStepAndDirectionAndOldindex(etapes: Etape[], sens: any, oldIndex: number): number {

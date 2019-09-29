@@ -1,6 +1,6 @@
 <ol class="multi-step-nav multi-step-nav-collapse-sm multi-step-indicator-label-top">
 
-    <li *ngFor="let etape of etapes; let last = last;"
+    <li *ngFor="let etape of getEtapes(); let last = last;"
         [ngClass]="{
                       'complete multi-step-item': true,
                       'multi-step-item-expand': !last,
