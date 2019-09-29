@@ -16,7 +16,7 @@ declare const Liferay: any;
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
-    constructor(private etapeService: ParcoursService, private messageService: MessageService) {
+    constructor(private parcoursService: ParcoursService, private messageService: MessageService) {
         window.addEventListener('message', this.receiveMessage.bind(this), false);
     }
 
@@ -26,9 +26,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         this.getEtapes();
 
         // Fait correspondre le parcours en fonction de URL
-        this.etapeService.nagigateEtapeByUrl(this.etapes, location.pathname);
-
-        this.getCurrentEtape();
+        this.parcoursService.nagigateEtapeByUrl(this.etapes, location.pathname);
     }
 
     ngAfterViewInit(): void {
@@ -39,13 +37,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         window.removeEventListener('message', this.receiveMessage.bind(this), false);
     }
 
-    public getCurrentEtape(): number {
-        return ParcoursService.getIndexFromCurrentEtape(this.etapes);
-    }
-
     // Retour la liste des étapes qui permet de construire le parcours de l'utilisateur
     getEtapes(): void {
-        this.etapeService.getEtapes()
+        this.parcoursService.getEtapes()
             .subscribe(etapes => this.etapes = etapes);
     }
 
@@ -59,9 +53,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
         if (data.event_id === ParcoursService.NAVIGATION) {
 
-            let newEtape = this.etapeService.navigateEtape(etapes, data.data.sens);
-            this.etapeService.loadSennaSurfacesByStep(newEtape);
-
+            this.parcoursService.navigateEtape(data.data.sens);
         }
     };
 

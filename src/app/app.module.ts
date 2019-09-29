@@ -5,6 +5,7 @@ import {APP_BASE_HREF} from "@angular/common";
 import {AppComponent} from './app.component';
 import {ParcoursService} from "./services/parcours.service";
 import {MessageService} from './services/message.service';
+import {SennaService} from "./services/senna.service";
 
 @NgModule({
     imports: [
@@ -19,6 +20,7 @@ import {MessageService} from './services/message.service';
     providers: [
         ParcoursService,
         MessageService,
+        SennaService,
         {provide: APP_BASE_HREF, useValue: '/'}
     ],
     schemas: [

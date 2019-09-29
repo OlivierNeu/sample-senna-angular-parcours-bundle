@@ -3,55 +3,53 @@ import {Observable, of} from "rxjs";
 
 import Etape from "../../types/Etape";
 import {ETAPES} from '../../types/Etape-mock';
+import {EtapesService} from "./etape.service";
+import {SennaService} from "./senna.service";
 
 declare const Liferay: any;
 
-@Injectable({
-    providedIn: 'root',
-})
+@Injectable()
 export class ParcoursService {
 
-    private static etapes: Etape[];
+    constructor(private sennaService: SennaService) {
+    }
 
     // Retourne une liste d'Etape récupéré via un appel distant. Fonction Asynchrone
     public getEtapes(): Observable<Etape[]> {
-        ParcoursService.etapes = ETAPES;
-        return of(this.setVisitedSteps(this.getSortedSteps(ParcoursService.etapes)));
+        EtapesService.setEtapes(ETAPES);
+        return of(EtapesService.setVisitedSteps(this.getSortedSteps(EtapesService.getEtapes())));
     }
 
     // Modifi le parcours en fonction du sens de l'étape, mémorise la nouvelle etape courante et implique un changement visuel
-    public navigateEtape(etapes: Etape[], sens: any): Etape {
+    public navigateEtape(sens: any): Etape {
 
-        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
-        let newIndex = this.getNewIndexByCurrentStepAndDirectionAndOldindex(etapes, sens, currentIndex);
+        let currentIndex = EtapesService.getIndexFromCurrentEtape();
+        let newIndex = this.getNewIndexByCurrentStepAndDirectionAndOldindex(EtapesService.getEtapes(), sens, currentIndex);
 
-        this.setVisitedSteps(etapes);
+        EtapesService.setVisitedSteps(EtapesService.getEtapes());
+        this.loadSennaSurfacesByStep(EtapesService.getEtapes()[newIndex]);
 
-        return etapes[newIndex];
+        return EtapesService.getEtapes()[newIndex];
     };
 
     // Charge les surfaces Senna en fonction de l'étape passé en param
-    public loadSennaSurfacesByStep(etape: Etape): void {
-        this.loadSurfaceByUrl(etape.url);
+    private loadSennaSurfacesByStep(etape: Etape): void {
+        this.sennaService.loadSurfaceByUrl(etape.url);
     };
 
     // Navigue vers l'étape correspondant à l'URL passé en param
     public nagigateEtapeByUrl(etapes: Etape[], url: string): Etape[] {
 
-        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
-        let newIndex = this.getIndexFromCurrentEtapeByUrl(etapes, url);
+        let currentIndex = EtapesService.getIndexFromCurrentEtape();
+        let newIndex = EtapesService.getIndexFromCurrentEtapeByUrl(etapes, url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
             this.setCurrentStepByNewindex(etapes, currentIndex, newIndex);
         }
 
-        this.setVisitedSteps(etapes);
+        EtapesService.setVisitedSteps(etapes);
 
         return etapes;
-    }
-
-    public static getIndexFromCurrentEtape(etapes: Etape[]): number {
-        return etapes.findIndex(x => x.etapeCourante == true);
     }
 
     // Retourne si possible l'index de l'étape donné par sont sens (prédédent ou suivant).
@@ -93,21 +91,6 @@ export class ParcoursService {
         }
     }
 
-    // Charge les surfaces Senna en fonction de l'URL passé en param. Lance aussi un évènement Liferay une fois la navigation réalisé
-    private loadSurfaceByUrl(url: string): Observable<boolean> {
-
-        if (typeof Liferay != "undefined") {
-            Liferay.SPA.app.navigate(url);
-            Liferay.fire('parcours:nav:load:ready');
-        }
-
-        return of(true);
-    }
-
-    private getIndexFromCurrentEtapeByUrl(etapes: Etape[], url: string): number {
-        return etapes.findIndex(x => x.url == url);
-    }
-
     // Trie le tableau d'étape en fonction du numeroEtape de chaque étape
     private getSortedSteps(etapes: Etape[]): Etape[] {
 
@@ -118,20 +101,6 @@ export class ParcoursService {
         });
 
         return etapesSorted;
-    }
-
-    public setVisitedSteps(etapes: Etape[]): Etape[] {
-
-        let currentIndex = ParcoursService.getIndexFromCurrentEtape(etapes);
-
-        etapes.forEach(function (etape: Etape, index: number) {
-
-            if (index <= currentIndex) {
-                etape.visited = true;
-            }
-        });
-
-        return etapes;
     }
 
     public static NAVIGATION = 'navigation';
