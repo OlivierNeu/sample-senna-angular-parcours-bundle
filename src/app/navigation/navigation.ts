@@ -1,7 +1,5 @@
 import {EtapeService} from "../services/etape-service";
 
-declare const Liferay: any;
-
 let init = function (): any {
     return;
 };

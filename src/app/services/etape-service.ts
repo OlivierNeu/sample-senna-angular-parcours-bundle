@@ -19,7 +19,7 @@ export class EtapeService {
     // Modifi le parcours en fonction du sens de l'étape, mémorise la nouvelle etape courante et implique un changement visuel
     public navigateEtape(etapes: Etape[], sens: any): Etape {
 
-        let currentIndex = this.getIndexFromCurrentEtape(etapes);
+        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
         let newIndex = this.getNewIndexByCurrentStepAndDirectionAndOldindex(etapes, sens, currentIndex);
 
         this.setVisitedSteps(etapes);
@@ -35,7 +35,7 @@ export class EtapeService {
     // Navigue vers l'étape correspondant à l'URL passé en param
     public nagigateEtapeByUrl(etapes: Etape[], url: string): Etape[] {
 
-        let currentIndex = this.getIndexFromCurrentEtape(etapes);
+        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
         let newIndex = this.getIndexFromCurrentEtapeByUrl(etapes, url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
@@ -45,6 +45,10 @@ export class EtapeService {
         this.setVisitedSteps(etapes);
 
         return etapes;
+    }
+
+    public static getIndexFromCurrentEtape(etapes: Etape[]): number {
+        return etapes.findIndex(x => x.etapeCourante == true);
     }
 
     // Retourne si possible l'index de l'étape donné par sont sens (prédédent ou suivant).
@@ -97,10 +101,6 @@ export class EtapeService {
         return of(true);
     }
 
-    private getIndexFromCurrentEtape(etapes: Etape[]): number {
-        return etapes.findIndex(x => x.etapeCourante == true);
-    }
-
     private getIndexFromCurrentEtapeByUrl(etapes: Etape[], url: string): number {
         return etapes.findIndex(x => x.url == url);
     }
@@ -119,7 +119,7 @@ export class EtapeService {
 
     public setVisitedSteps(etapes: Etape[]): Etape[] {
 
-        let currentIndex = this.getIndexFromCurrentEtape(etapes);
+        let currentIndex = EtapeService.getIndexFromCurrentEtape(etapes);
 
         etapes.forEach(function (etape: Etape, index: number) {
 

@@ -37,6 +37,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         window.removeEventListener('message', this.receiveMessage.bind(this), false);
     }
 
+    public getCurrentEtape(): number {
+        return EtapeService.getIndexFromCurrentEtape(this.etapes);
+    }
+
     // Retour la liste des étapes qui permet de construire le parcours de l'utilisateur
     getEtapes(): void {
         this.etapeService.getEtapes()
