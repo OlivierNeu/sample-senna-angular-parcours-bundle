@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 
 import {ParcoursService} from "./services/parcours.service";
-import {MessageService} from './services/message.service';
 
 import Etape from "../types/Etape";
 import LiferayParams from "../types/LiferayParams";
@@ -16,7 +15,7 @@ declare const Liferay: any;
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
-    constructor(private parcoursService: ParcoursService, private messageService: MessageService) {
+    constructor(private parcoursService: ParcoursService) {
         window.addEventListener('message', this.receiveMessage.bind(this), false);
     }
 
@@ -37,9 +36,9 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         window.removeEventListener('message', this.receiveMessage.bind(this), false);
     }
 
-    // Retour la liste des étapes qui permet de construire le parcours de l'utilisateur
+    // Retourne la liste des étapes qui permet de construire le parcours de l'utilisateur
     getEtapes(): void {
-        this.parcoursService.getEtapes()
+        this.parcoursService.initEtapes()
             .subscribe(etapes => this.etapes = etapes);
     }
 

@@ -15,7 +15,7 @@ export class ParcoursService {
     }
 
     // Retourne une liste d'Etape récupéré via un appel distant. Fonction Asynchrone
-    public getEtapes(): Observable<Etape[]> {
+    public initEtapes(): Observable<Etape[]> {
         EtapesService.setEtapes(ETAPES);
         return of(EtapesService.setVisitedSteps(this.getSortedSteps(EtapesService.getEtapes())));
     }
@@ -44,7 +44,7 @@ export class ParcoursService {
         let newIndex = EtapesService.getIndexFromCurrentEtapeByUrl(etapes, url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
-            this.setCurrentStepByNewindex(etapes, currentIndex, newIndex);
+            this.setCurrentStepByNewindex(currentIndex, newIndex);
         }
 
         EtapesService.setVisitedSteps(etapes);
@@ -68,7 +68,7 @@ export class ParcoursService {
         // Si le sens prévois le dépassement des bornes du tableau d'étapes alors l'étape courante n'est pas modifié
         if (newIndex !== oldIndex && oldIndex >= 0 && newIndex >= 0 && newIndex < etapes.length) {
 
-            this.setCurrentStepByNewindex(etapes, oldIndex, newIndex);
+            this.setCurrentStepByNewindex(oldIndex, newIndex);
 
             return newIndex;
         }
@@ -77,16 +77,16 @@ export class ParcoursService {
     }
 
     // Modifi l'étape courante en fonction du nouvelle index
-    private setCurrentStepByNewindex(etapes: Etape[], oldIndex: number = 0, newIndex: number): void {
+    private setCurrentStepByNewindex(oldIndex: number = 0, newIndex: number): void {
 
-        etapes[oldIndex].etapeCourante = false;
-        etapes[newIndex].etapeCourante = true;
+        EtapesService.getEtapes()[oldIndex].etapeCourante = false;
+        EtapesService.getEtapes()[newIndex].etapeCourante = true;
 
         if (typeof Liferay != "undefined") {
             Liferay.fire('parcours:nav:change:step', {
                 isPrevious: (newIndex > 0),
-                isNext: (newIndex < (etapes.length - 1)),
-                etape: etapes[newIndex]
+                isNext: (newIndex < (EtapesService.getEtapes().length - 1)),
+                etape: EtapesService.getEtapes()[newIndex]
             });
         }
     }
