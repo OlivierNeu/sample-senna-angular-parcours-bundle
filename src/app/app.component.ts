@@ -1,13 +1,13 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 
 import {EtapeService} from "./services/etape-service";
 import {MessageService} from './services/message-service';
 
 import Etape from "../types/Etape";
 import LiferayParams from "../types/LiferayParams";
+import * as $ from 'jquery';
 
 declare const Liferay: any;
-import * as $ from 'jquery';
 
 @Component({
     selector: 'app-root',
