@@ -24,8 +24,8 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         // Initialise le tableau d'étapes
         this.getEtapes();
 
-        // Fait correspondre le parcours en fonction de URL
-        this.parcoursService.nagigateEtapeByUrl(this.etapes, location.pathname);
+        // Fait correspondre le parcours en fonction de URL courante. Obligatoire lors du chargement d'une étape directe
+        this.parcoursService.nagigateEtapeByUrl(location.pathname);
     }
 
     ngAfterViewInit(): void {

@@ -38,18 +38,18 @@ export class ParcoursService {
     };
 
     // Navigue vers l'étape correspondant à l'URL passé en param
-    public nagigateEtapeByUrl(etapes: Etape[], url: string): Etape[] {
+    public nagigateEtapeByUrl(url: string): Etape[] {
 
         let currentIndex = EtapesService.getIndexFromCurrentEtape();
-        let newIndex = EtapesService.getIndexFromCurrentEtapeByUrl(etapes, url);
+        let newIndex = EtapesService.getIndexFromCurrentEtapeByUrl(EtapesService.getEtapes(), url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
             this.setCurrentStepByNewindex(currentIndex, newIndex);
         }
 
-        EtapesService.setVisitedSteps(etapes);
+        EtapesService.setVisitedSteps(EtapesService.getEtapes());
 
-        return etapes;
+        return EtapesService.getEtapes();
     }
 
     // Retourne si possible l'index de l'étape donné par sont sens (prédédent ou suivant).
