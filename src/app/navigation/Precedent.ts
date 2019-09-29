@@ -1,4 +1,5 @@
 import {ParcoursService} from '../services/parcours.service'
+import {EtapesService} from '../services/etape.service'
 
 class NavigationPrecedent {
 
@@ -13,3 +14,4 @@ class NavigationPrecedent {
 }
 
 export default NavigationPrecedent;
+export {EtapesService}
