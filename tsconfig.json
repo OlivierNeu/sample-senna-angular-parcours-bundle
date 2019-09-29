@@ -22,8 +22,6 @@
     "pretty": true,
     "charset": "UTF-8",
     "types": [
-      "jasmine",
-      "node",
       "jquery"
     ]
   },

@@ -1,5 +1,7 @@
 {
-	"liferayDir": "/java/workspace/dxp/liferay-workspace/bundles",
+	"translatorTextKey": "",
+	"supportedLocales": [],
+	"liferayDir": "/java/workspace_idea/symposium_liferay_2019/liferay-workspace-7.2/bundles",
 	"webpack": {
 		"rules": [
 			{
