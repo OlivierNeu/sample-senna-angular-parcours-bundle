@@ -37,7 +37,7 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
                 }, '*');
             });
 
-            this._btnNext.innerText = this.getAttribute('btn-label') || Liferay.Language.get(this._defaultLabel);
+            this._setLabel();
         }
 
         static get observedAttributes() {
@@ -57,7 +57,9 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
         }
 
         _setLabel(value) {
-            if (value === null) return;
+            if (value === null || value === undefined) {
+                value = this.getAttribute('btn-label') || this._defaultLabel;
+            }
             this._btnNext.innerText = Liferay.Language.get(value);
         }
 
@@ -73,7 +75,7 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             super();
 
             // DOM elements
-            this._btnNext = null;
+            this._btnPrevious = null;
             // data
             this._defaultLabel = 'sample.previous';
             this._defaultStyle = 'secondary';
@@ -84,12 +86,11 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             this.innerHTML = `
             <style>
             </style>
-            <button id="btn-previous" class="" type="button">
-            </button>
+            <button id="btn-previous" class="" type="button"></button>
         `;
 
-            this._btnNext = document.querySelector('#btn-previous');
-            this._btnNext.addEventListener('click', event => {
+            this._btnPrevious = document.querySelector('#btn-previous');
+            this._btnPrevious.addEventListener('click', event => {
                 console.log('click');
 
                 window.top.postMessage({
@@ -123,11 +124,11 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
         }
 
         _setLabel(value) {
-            if (value === null) {
+            if (value === null || value === undefined) {
                 value = this.getAttribute('btn-label') || this._defaultLabel;
             }
 
-            this._btnNext.innerText = Liferay.Language.get(value);
+            this._btnPrevious.innerText = Liferay.Language.get(value);
         }
 
         _setStyle(value) {
@@ -136,7 +137,7 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
                 value = this._defaultStyle;
             }
 
-            this._btnNext.setAttribute('class', 'btn btn-' + value);
+            this._btnPrevious.setAttribute('class', 'btn btn-' + value);
         }
 
         get hidden() {
