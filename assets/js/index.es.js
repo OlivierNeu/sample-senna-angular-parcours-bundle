@@ -14,7 +14,7 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             // DOM elements
             this._btnNext = null;
             // data
-            this._defaultLabel = 'next';
+            this._defaultLabel = 'sample.next';
         }
 
         connectedCallback() {
@@ -75,7 +75,7 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             // DOM elements
             this._btnNext = null;
             // data
-            this._defaultLabel = 'previous';
+            this._defaultLabel = 'sample.previous';
             this._defaultStyle = 'secondary';
         }
 
