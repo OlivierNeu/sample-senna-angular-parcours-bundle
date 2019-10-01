@@ -60,7 +60,17 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             if (value === null || value === undefined) {
                 value = this.getAttribute('btn-label') || this._defaultLabel;
             }
-            this._btnNext.innerText = Liferay.Language.get(value);
+            this._btnNext.innerText = this._getLiferayTranslatedKey(value);
+        }
+
+        _getLiferayTranslatedKey(value) {
+
+            let valueTranslated = Liferay.Language.get(value);
+            if (valueTranslated === null || valueTranslated === "null") {
+                valueTranslated = this._defaultLabel;
+            }
+
+            return valueTranslated;
         }
 
     } // end class
@@ -125,10 +135,10 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
 
         _setLabel(value) {
             if (value === null || value === undefined) {
-                value = this.getAttribute('btn-label') || this._defaultLabel;
+                value = this.getAttribute('btn-label' || this._defaultLabel);
             }
 
-            this._btnPrevious.innerText = Liferay.Language.get(value);
+            this._btnPrevious.innerText = this._getLiferayTranslatedKey(value);
         }
 
         _setStyle(value) {
@@ -138,6 +148,16 @@ if (window.customElements.get('fwd-portail-btn-next') === undefined) {
             }
 
             this._btnPrevious.setAttribute('class', 'btn btn-' + value);
+        }
+
+        _getLiferayTranslatedKey(value) {
+
+            let valueTranslated = Liferay.Language.get(value);
+            if (valueTranslated === null || valueTranslated === "null") {
+                valueTranslated = this._defaultLabel;
+            }
+
+            return valueTranslated;
         }
 
         get hidden() {
