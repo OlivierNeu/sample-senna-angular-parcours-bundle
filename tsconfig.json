@@ -25,6 +25,9 @@
       "jquery"
     ]
   },
+  "files": [
+    "./src/polyfills.ts"
+  ],
   "include": [
     "./src/**/*.ts"
   ]
