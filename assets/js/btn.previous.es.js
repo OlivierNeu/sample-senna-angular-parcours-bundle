@@ -12,6 +12,7 @@ if (window.customElements.get('fwd-portail-btn-previous') === undefined) {
             super();
 
             // DOM elements
+            this._uuid = FwdPortailBtnPrevious._randomString();
             this._btnPrevious = null;
             // data
             this._defaultLabel = 'sample.previous';
@@ -19,16 +20,12 @@ if (window.customElements.get('fwd-portail-btn-previous') === undefined) {
         }
 
         connectedCallback() {
-            console.log('fwd-portail-btn-previous connected');
-            this.innerHTML = `
-            <style>
-            </style>
-            <button id="btn-previous" class="" type="button"></button>
-        `;
+            console.log('fwd-portail-btn-previous connected', this._uuid);
+            this.innerHTML = '<style></style><button id="btn-previous-' + this._uuid + '" class="" type="button"></button>';
 
-            this._btnPrevious = document.querySelector('#btn-previous');
+            this._btnPrevious = document.querySelector('#btn-previous-' + this._uuid);
             this._btnPrevious.addEventListener('click', event => {
-                console.log('click');
+                console.log('click', this._uuid);
 
                 window.top.postMessage({
                     event_id: 'navigation',
@@ -47,7 +44,7 @@ if (window.customElements.get('fwd-portail-btn-previous') === undefined) {
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
-            console.log('attribute changed', name, oldValue, newValue);
+            console.log('attribute changed', this._uuid, name, oldValue, newValue);
 
             if (name === 'btn-label') {
                 this._setLabel(newValue);
@@ -57,7 +54,7 @@ if (window.customElements.get('fwd-portail-btn-previous') === undefined) {
         }
 
         disconnectedCallback() {
-            console.log('disconnected');
+            console.log('disconnected', this._uuid);
         }
 
         _setLabel(value) {
@@ -97,6 +94,10 @@ if (window.customElements.get('fwd-portail-btn-previous') === undefined) {
             } else {
                 this.removeAttribute('hidden');
             }
+        }
+
+        static _randomString() {
+            return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         }
 
     } // end class

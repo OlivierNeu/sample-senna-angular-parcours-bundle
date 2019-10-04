@@ -17,17 +17,8 @@
     "target": "es5",
     "typeRoots": [
       "./node_modules/@types/"
-    ],
-    "removeComments": true,
-    "pretty": true,
-    "charset": "UTF-8",
-    "types": [
-      "jquery"
     ]
   },
-  "files": [
-    "./src/polyfills.ts"
-  ],
   "include": [
     "./src/**/*.ts"
   ]

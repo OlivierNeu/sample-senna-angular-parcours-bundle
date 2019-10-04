@@ -17,6 +17,10 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(private parcoursService: ParcoursService) {
         window.addEventListener('message', this.receiveMessage.bind(this), false);
+
+        Liferay.SPA.app.on('endNavigate', function(event: any) {
+            ParcoursService.nagigateEtapeByUrl(location.pathname);
+        });
     }
 
     ngOnInit() {
@@ -25,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
         this.parcoursService.initEtapes();
 
         // Fait correspondre le parcours en fonction de URL courante. Obligatoire lors du chargement d'une étape directe
-        this.parcoursService.nagigateEtapeByUrl(location.pathname);
+        ParcoursService.nagigateEtapeByUrl(location.pathname);
     }
 
     ngAfterViewInit(): void {

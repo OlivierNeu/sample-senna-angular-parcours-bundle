@@ -38,13 +38,13 @@ export class ParcoursService {
     };
 
     // Navigue vers l'étape correspondant à l'URL passé en param
-    public nagigateEtapeByUrl(url: string): Etape[] {
+    public static nagigateEtapeByUrl(url: string): Etape[] {
 
         let currentIndex = EtapesService.getIndexFromCurrentEtape();
         let newIndex = EtapesService.getIndexFromCurrentEtapeByUrl(EtapesService.getEtapes(), url);
 
         if (currentIndex != newIndex && currentIndex >= 0 && newIndex >= 0) {
-            this.setCurrentStepByNewindex(currentIndex, newIndex);
+            ParcoursService.setCurrentStepByNewindex(currentIndex, newIndex);
         }
 
         EtapesService.setVisitedSteps(EtapesService.getEtapes());
@@ -73,7 +73,7 @@ export class ParcoursService {
         // Si le sens prévois le dépassement des bornes du tableau d'étapes alors l'étape courante n'est pas modifié
         if (newIndex !== oldIndex && oldIndex >= 0 && newIndex >= 0 && newIndex < etapes.length) {
 
-            this.setCurrentStepByNewindex(oldIndex, newIndex);
+            ParcoursService.setCurrentStepByNewindex(oldIndex, newIndex);
 
             return newIndex;
         }
@@ -82,7 +82,7 @@ export class ParcoursService {
     }
 
     // Modifi l'étape courante en fonction du nouvelle index
-    private setCurrentStepByNewindex(oldIndex: number = 0, newIndex: number): void {
+    private static setCurrentStepByNewindex(oldIndex: number = 0, newIndex: number): void {
 
         EtapesService.getEtapes()[oldIndex].etapeCourante = false;
         EtapesService.getEtapes()[newIndex].etapeCourante = true;
