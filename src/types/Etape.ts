@@ -4,7 +4,6 @@
 export default interface Etape {
     numeroEtape: number,
     etapeCourante: boolean,
-    sourceImage: string,
     nomEtape: string,
     url: string,
     visited?: boolean

@@ -1,0 +1,10 @@
+{
+  "exclude-folders": ["build", "classes"],
+  "ignore": {
+    "sample-senna-angular-parcours-bundle": {
+      "sample-npm-provider": {
+        "@angular/core": true
+      }
+    }
+  }
+}
