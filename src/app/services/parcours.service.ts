@@ -15,7 +15,7 @@ export class ParcoursService {
     }
 
     // Retourne la liste d'étapes
-    public static getEtapes():Etape[] {
+    public static getEtapes(): Etape[] {
         return EtapesService.getEtapes();
     }
 

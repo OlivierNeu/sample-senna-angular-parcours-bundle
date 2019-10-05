@@ -41,4 +41,12 @@ export class EtapesService {
         return etapes;
     }
 
+    public static isFirstStep(): boolean {
+        return 0 === EtapesService.getIndexFromCurrentEtape();
+    }
+
+    public static isLastStep(): boolean {
+        return this.etapes.length === EtapesService.getIndexFromCurrentEtape();
+    }
+
 }
