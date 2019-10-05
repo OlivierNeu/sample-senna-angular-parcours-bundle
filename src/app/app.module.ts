@@ -6,13 +6,15 @@ import {AppComponent} from './app.component';
 import {ParcoursService} from "./services/parcours.service";
 import {MessageService} from './services/message.service';
 import {SennaService} from "./services/senna.service";
+import {LiferayTranslatePipe} from "./pipes/liferay-translate.pipe";
 
 @NgModule({
     imports: [
         BrowserModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        LiferayTranslatePipe
     ],
     entryComponents: [
         AppComponent
