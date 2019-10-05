@@ -56,7 +56,7 @@
   },
   "portlet": {
     "com.liferay.portlet.display-category": "category.symposium2019",
-    "com.liferay.portlet.header-portlet-css": "/css/app.component.css",
+    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
     "com.liferay.portlet.header-portal-javascript": [
       "/o/sample-senna-angular-parcours-bundle/js/btn.next.es.js",
       "/o/sample-senna-angular-parcours-bundle/js/btn.previous.es.js"

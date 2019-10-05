@@ -1,17 +1,20 @@
 import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 
 import {ParcoursService} from "./services/parcours.service";
+import {environment} from '../env/environment';
 
 import Etape from "../types/Etape";
 import LiferayParams from "../types/LiferayParams";
 import * as $ from 'jquery';
 
 declare const Liferay: any;
+const templateUrl = `${environment.path.app}/app/app.component.html`;
+const styleUrls = [`${environment.path.css}/css/app.component.css`];
 
 @Component({
     selector: 'app-root',
-    templateUrl: '/o/sample-senna-angular-parcours-bundle/app/app.component.html',
-    styleUrls: ['/o/sample-senna-angular-parcours-bundle/css/app.component.css']
+    templateUrl,
+    styleUrls
 })
 export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 
